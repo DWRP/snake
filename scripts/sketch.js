@@ -48,12 +48,12 @@ function setup(){
     if(windowWidth>1024){
         frameRate(10)
         createCanvas(windowWidth, windowHeight)
-        rPositions = listMat(width,height)
     }else{
+        console.log('entrei aqui')
         frameRate(8)
         createCanvas(windowWidth, windowHeight-(windowHeight*0.3))
-        rPositions = listMat(width,height-(heigth*0.3))
     }
+    rPositions = listMat(width,height)
     snake.colide = true
     
 }
