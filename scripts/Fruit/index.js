@@ -7,8 +7,6 @@ class Fruit{
     }
 
     colision(player,randPos){
-        console.log(this.pos.x,this.pos.y)
-        console.log(player[0].x,player[0].y)
         
         let hit = this.pos.x===player[0].x && this.pos.y === player[0].y?true:false
         if(hit){

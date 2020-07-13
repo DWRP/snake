@@ -33,7 +33,6 @@ let rPositions
 function preload(){
     
     backgroundMusic = createAudio('../assets/audios/background/back.wav')
-    backgroundMusic.autoplay(true)
     backgroundMusic.volume(.2)
     backgroundMusic.loop()
 
@@ -49,13 +48,12 @@ function setup(){
         frameRate(10)
         createCanvas(windowWidth, windowHeight)
     }else{
-        console.log('entrei aqui')
         frameRate(8)
         createCanvas(windowWidth, windowHeight-(windowHeight*0.3))
     }
     rPositions = listMat(width,height)
     snake.colide = true
-    
+    console.log('Setup Finish')
 }
 
 function keyPressed(){
