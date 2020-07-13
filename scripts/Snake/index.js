@@ -176,14 +176,14 @@ class Snake{
         }
         
         if (this.direction === "RIGHT" || this.direction === "LEFT" || this.direction === ""){
-            this.positions[0].x = this.direction=== "LEFT"?this.positions[0].x - this.positions[0].size.w: this.positions[0].x + 30
+            this.positions[0].x = this.direction=== "LEFT"?this.positions[0].x - this.positions[0].size.w: this.positions[0].x + this.positions[0].size.w
             limit = this.checkW(this.positions[0].x)
             this.positions[0].x = limit >= 0?limit:this.positions[0].x
             
         }
         
         if (this.direction === "UP" || this.direction === "DOWN"){
-            this.positions[0].y = this.direction=== "UP"?this.positions[0].y - this.positions[0].size.w: this.positions[0].y + 30
+            this.positions[0].y = this.direction=== "UP"?this.positions[0].y - this.positions[0].size.w: this.positions[0].y + this.positions[0].size.w
             limit = this.checkH(this.positions[0].y)
             this.positions[0].y = limit >= 0 ?limit:this.positions[0].y
         }
