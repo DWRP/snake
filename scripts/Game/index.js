@@ -5,6 +5,4 @@ function run(snake,fruit,audio) {
     fruit.show()
     snake.addPart(fruit.colision(snake.positions,rPositions),audio)
     snake.colision()
-
-    console.log(fruit.pos)
 }

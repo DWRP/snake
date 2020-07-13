@@ -1,5 +1,6 @@
 class Snake{
-    constructor(){
+    constructor(pos){
+        this.rPos = pos
         this.score = 0
         this.colide = false
         this.direction = ""
@@ -112,7 +113,7 @@ class Snake{
             return 0
         }
         if (value < 0){
-            return width - 30
+            return this.rPos[0][this.rPos[0].length-1]
         }
     }
     checkH(value){
@@ -120,7 +121,7 @@ class Snake{
             return 0
         }
         if (value < 0){
-            return height - 30
+            return this.rPos[1][this.rPos[1].length-1]
         }
     }
 
@@ -175,14 +176,14 @@ class Snake{
         }
         
         if (this.direction === "RIGHT" || this.direction === "LEFT" || this.direction === ""){
-            this.positions[0].x = this.direction=== "LEFT"?this.positions[0].x - this.positions[0].size.w: this.positions[0].x + this.positions[0].size.w
+            this.positions[0].x = this.direction=== "LEFT"?this.positions[0].x - this.positions[0].size.w: this.positions[0].x + 30
             limit = this.checkW(this.positions[0].x)
             this.positions[0].x = limit >= 0?limit:this.positions[0].x
             
         }
         
         if (this.direction === "UP" || this.direction === "DOWN"){
-            this.positions[0].y = this.direction=== "UP"?this.positions[0].y - this.positions[0].size.w: this.positions[0].y + this.positions[0].size.w
+            this.positions[0].y = this.direction=== "UP"?this.positions[0].y - this.positions[0].size.w: this.positions[0].y + 30
             limit = this.checkH(this.positions[0].y)
             this.positions[0].y = limit >= 0 ?limit:this.positions[0].y
         }

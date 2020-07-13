@@ -2,10 +2,10 @@ function listMat(w,h){
     let list = []
     let wid = []
     let hei = []
-    for(let index = 30; index<w-30;index += 30){
+    for(let index = 30; index<w;index += 30){
         wid.push(index)
     }
-    for(let index = 30; index<h-30;index += 30){
+    for(let index = 30; index<h;index += 30){
         hei.push(index)
     }
 
@@ -14,7 +14,7 @@ function listMat(w,h){
 }
 
 function startGame(){
-    snake = new Snake()
+    snake = new Snake(rPositions)
     fruit = new Fruit(random(rPositions[0]),random(rPositions[1]))
     document.querySelector('.menu').classList.toggle('hidden')
     if(screen.width < 1024){
@@ -39,7 +39,7 @@ function preload(){
 
     snakeEat = createAudio('../assets/audios/snake/eat.wav')
 
-    snake = new Snake()
+    snake = new Snake(rPositions)
 
     frameRate(10)
 }
@@ -49,7 +49,6 @@ function setup(){
     if(windowWidth>1024){
         createCanvas(windowWidth, windowHeight)
     }else{
-        console.log(windowHeight-(windowHeight/2))
         createCanvas(windowWidth, windowHeight-(windowHeight/5))
     }
     rPositions = listMat(width,height)
