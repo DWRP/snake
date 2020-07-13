@@ -1,8 +1,10 @@
-function run(snake,fruit) {
+function run(snake,fruit,audio) {
     
     snake.show()
     snake.move()
     fruit.show()
-    snake.addPart(fruit.colision(snake.positions,rPositions))
+    snake.addPart(fruit.colision(snake.positions,rPositions),audio)
     snake.colision()
+
+    console.log(fruit.pos)
 }

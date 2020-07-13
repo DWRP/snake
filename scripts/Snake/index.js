@@ -80,9 +80,11 @@ class Snake{
                 item.border.bottomL)
         })
     }
-    addPart(check){
+    addPart(check,audio){
         if(check){
             this.score++
+            audio.play()
+            setTimeout(()=>{audio.stop()},300)
             this.positions.push({
                 color:{
                     R:255,
