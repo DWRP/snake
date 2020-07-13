@@ -145,6 +145,9 @@ class Snake{
                     document.querySelector('.score').innerHTML = `Melhor pontuação: ${this.score}`
                     this.resizeSnake()
                     document.querySelector('.menu').classList.toggle('hidden')
+                    if(width < 1024){
+                        document.querySelector('.mobile').classList.toggle('hidden')
+                    }
                 }
             }
             

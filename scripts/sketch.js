@@ -17,6 +17,9 @@ function startGame(){
     snake = new Snake()
     fruit = new Fruit(random(rPositions[0]),random(rPositions[1]))
     document.querySelector('.menu').classList.toggle('hidden')
+    if(screen.width < 1024){
+        document.querySelector('.mobile').classList.toggle('hidden')
+    }
 }
 
 let snake
@@ -55,27 +58,9 @@ function keyPressed(){
     }
 }
 
-function touchMoved() {
-    let direction
-
-    if(event.movementX>0){
-        direction = "RIGHT"
-    }
-    else if(event.movementX<0){
-        direction = "LEFT"
-    }
-    else if(event.movementY>0){
-        direction = "DOWN"
-    }
-    else if(event.movementY<0){
-        direction = "UP"
-    }
-    
-    console.log(event.movementX)
-    console.log(event.movementY)
-    console.log(direction)
-    snake.changeDirection(direction)
-  }
+function arrowButtons(directionMove){
+    snake.changeDirection(directionMove)
+}
 
 function draw(){
     clear()
