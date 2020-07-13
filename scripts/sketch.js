@@ -46,7 +46,12 @@ function preload(){
 
 function setup(){
     console.log('Setup Running')
-    createCanvas(windowWidth, windowHeight)
+    if(windowWidth>1024){
+        createCanvas(windowWidth, windowHeight)
+    }else{
+        console.log(windowHeight-(windowHeight/2))
+        createCanvas(windowWidth, windowHeight-(windowHeight/5))
+    }
     rPositions = listMat(width,height)
     snake.colide = true
     
